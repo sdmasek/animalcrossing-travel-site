@@ -11,6 +11,10 @@ body{
   
 }
 
+p{
+    text-align: center;
+}
+
 ul{
     padding: 0;
 }
@@ -22,15 +26,35 @@ h2{
     
 }
 
-#main-nav li, a{
+/* nav-item transitions ---------- */
+/*use this to grow a flex item on hover
+
+/* .nav-item {
+	flex-grow: 1;
+  transition: flex-grow .5s;
+}
+
+.nav-item:hover {
+	flex-grow: 2;
+} */
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#main-nav li, a:not([class="logo"]){
     list-style: none;
     text-decoration: none;
+    text-align: center;
     line-height: 2.5em;
+    font-weight: 700;
+    transition: transform .3s ease-in-out .2s;
 }
 
 #main-nav li:hover{
-    animation: skew 3s ease-in;
-    transform: skew(-25deg);
+    transform: translateY(-10px) scale(1.05);
+    
 
 }
 
@@ -41,15 +65,22 @@ h2{
 }
 
 #banner_img-container{
-    background-image: url(images/bathroom_1.jpg);
+    background-image: url(images/museum_background.jpg);
     background-color: #3A5546;
     background-blend-mode:soft-light;
     background-position: center;
     background-size: cover;
+    height: 300px;
     margin: 0;
-    box-sizing: border-box;
-   
+    transition-duration: .4s;
+    transition-property: background-color;
+    
 }
+
+#banner_img-container:hover {
+    background-color: #5d8a71;
+}
+
 #banner_img-container figcaption {
     
     font-size: 3rem;
@@ -57,7 +88,6 @@ h2{
     text-shadow: -2px 2px 2px gray;
     padding-left: 1rem;
     display: flex;
-    text-align: center;
     align-items: center;
     justify-content: center;
 }
@@ -84,32 +114,46 @@ h2{
     
 }
 
-.twitter{
-    background-image: url(Images/twitter.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-   
-}
-.youtube{
-    background-image: url(Images/youtube.svg);
-   
-}
-.instagram{
-    background-image: url(Images/instagram.svg);
-   
+.social_twitter{
+    background-size: 50px 50px;
+    width: 50px;
+    height: 50px;
 }
 
-#choose_adventure{
-    /* width: 50%; */
-    display:flex;
-    height: 500px; 
-    padding: 1rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+.social_icon a:nth-of-type(1){
+    background: url(Images/twitter.svg) no-repeat;
+}
+
+.greenknite-highlights h3{
+    text-align: center;
+    margin: 2.5rem;
+    line-height: 2rem;
+}
+
+.greenknite-highlights p{
+    margin: 1.5rem;
+    line-height: 1.5rem;
+    letter-spacing: .25rem;
+}
+.travel-highlights{
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    flex: 1;
-    
+}
+
+.travel-highlights figure{
+    width: 100%;
+}
+
+.travel-highlights img{
+    width: 100%;
+    height: 200px;    
+    margin-top: 1rem;
+}
+
+.travel-highlights figcaption{
+    margin: 1.5rem;
+    text-align: center;
 }
 
 .choose_adventure h3{
